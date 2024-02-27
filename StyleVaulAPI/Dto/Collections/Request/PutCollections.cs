@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Collections.Request
+﻿namespace StyleVaulAPI.Dto.Collections.Request
 {
     public class PutCollections
     {

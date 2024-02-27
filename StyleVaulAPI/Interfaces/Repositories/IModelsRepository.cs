@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Interfaces.Repositories
+﻿namespace StyleVaulAPI.Interfaces.Repositories
 {
     public class IModelsRepository
     {

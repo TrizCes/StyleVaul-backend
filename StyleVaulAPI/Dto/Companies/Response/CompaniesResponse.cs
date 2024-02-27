@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Companies.Response
+﻿namespace StyleVaulAPI.Dto.Companies.Response
 {
     public class CompaniesResponse
     {

@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Controllers
+﻿namespace StyleVaulAPI.Controllers
 {
     public class CompaniesController 
     {

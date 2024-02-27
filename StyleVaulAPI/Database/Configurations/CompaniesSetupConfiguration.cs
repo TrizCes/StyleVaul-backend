@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Database.Configurations
+﻿namespace StyleVaulAPI.Database.Configurations
 {
     public class CompaniesSetupConfiguration
     {

@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Services
+﻿namespace StyleVaulAPI.Services
 {
     public class CollectionsService
     {

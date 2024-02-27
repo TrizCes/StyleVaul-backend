@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Companies.Request
+﻿namespace StyleVaulAPI.Dto.Companies.Request
 {
     public class PutCompanies
     {

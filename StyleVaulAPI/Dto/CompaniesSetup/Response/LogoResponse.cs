@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.CompaniesSetup.Response
+﻿namespace StyleVaulAPI.Dto.CompaniesSetup.Response
 {
     public class LogoResponse
     {
