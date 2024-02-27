@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Database.Repositories
+﻿namespace StyleVaulAPI.Database.Repositories
 {
     public class ModelsRepository
     {

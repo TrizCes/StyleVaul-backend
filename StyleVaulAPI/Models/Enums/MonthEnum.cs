@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Models.Enums
+﻿namespace StyleVaulAPI.Models.Enums
 {
     public class MonthEnum
     {

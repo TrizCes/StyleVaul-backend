@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Models
+﻿namespace StyleVaulAPI.Models
 {
     public class Company
     {

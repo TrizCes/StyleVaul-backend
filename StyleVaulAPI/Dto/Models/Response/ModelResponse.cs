@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Models.Response
+﻿namespace StyleVaulAPI.Dto.Models.Response
 {
     public class ModelResponse
     {

@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Collections.Response
+﻿namespace StyleVaulAPI.Dto.Collections.Response
 {
     public class CollectionsBudgetsVsCosts
     {

@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.CompaniesSetup.Request
+﻿namespace StyleVaulAPI.Dto.CompaniesSetup.Request
 {
     public class CompaniesSetupRequest
     {

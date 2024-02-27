@@ -1,4 +1,4 @@
-﻿namespace StyleVaul.Dto.Models.Request
+﻿namespace StyleVaulAPI.Dto.Models.Request
 {
     public class PutModels
     {
