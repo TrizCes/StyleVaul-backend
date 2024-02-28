@@ -1,13 +1,15 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using StyleVaulAPI.Attributes;
 using StyleVaulAPI.Dto.Companies.Request;
 using StyleVaulAPI.Dto.Users.Response;
 using StyleVaulAPI.Interfaces.Services;
+using StyleVaulAPI.Models.Enums;
 
 namespace StyleVaulAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(RoleEnum.Admin)]
     public class CompaniesController : ControllerBase
     {
         private readonly ICompaniesService _service;

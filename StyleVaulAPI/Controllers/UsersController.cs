@@ -1,16 +1,19 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StyleVaul.Attributes;
 using StyleVaulAPI.Dto.Users.Request;
 using StyleVaulAPI.Dto.Users.Response;
 using StyleVaulAPI.Interfaces.Services;
 using StyleVaulAPI.Models;
+using StyleVaulAPI.Models.Enums;
+
 using System.Net;
 
 namespace StyleVaulAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(RoleEnum.Admin, RoleEnum.Manager)]
     public class UsersController : ControllerBase
     {
         private readonly IUsersService _service;
@@ -23,6 +26,7 @@ namespace StyleVaulAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(RoleEnum.Admin, RoleEnum.Manager)]
         public async Task<IActionResult> Post([FromBody] PostUsers user)
         {
             var changer = (UsersResponse)HttpContext.Items["User"]!;
@@ -33,6 +37,7 @@ namespace StyleVaulAPI.Controllers
         }
 
         [HttpPut("{id:int}")]
+        [Authorize(RoleEnum.Admin, RoleEnum.Manager)]
         public async Task<IActionResult> Put([FromRoute] int id, [FromBody] PutUsers user)
         {
             var changer = (UsersResponse)HttpContext.Items["User"]!;
@@ -62,6 +67,7 @@ namespace StyleVaulAPI.Controllers
         }
 
         [HttpPatch("profile-update")]
+        [Authorize(RoleEnum.Admin, RoleEnum.Manager, RoleEnum.Team, RoleEnum.ReadOnly)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> PatchPassword(
@@ -72,12 +78,14 @@ namespace StyleVaulAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize(RoleEnum.Team, RoleEnum.ReadOnly)]
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _service.GetAllAsync(GetCompanyIdOfUser()));
         }
 
         [HttpGet("{id:int}")]
+        [Authorize(RoleEnum.Team, RoleEnum.ReadOnly)]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             return Ok(await _service.GetByIdAsync(id));
