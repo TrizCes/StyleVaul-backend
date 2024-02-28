@@ -9,6 +9,8 @@ using StyleVaulAPI.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AutoMapper;
+using StyleVaulAPI.Extensions;
 
 namespace StyleVaulAPI.Services
 {
@@ -16,16 +18,19 @@ namespace StyleVaulAPI.Services
     {
         private readonly IUsersRepository _repository;
         private readonly ICompaniesRepository _companyRepository;
+        private readonly IMapper _mapper;
         private readonly IConfiguration _configuration;
 
         public UsersService(
             IUsersRepository repository,
             ICompaniesRepository companyRepository,
+            IMapper mapper,
             IConfiguration configuration
         )
         {
             _repository = repository;
             _companyRepository = companyRepository;
+            _mapper = mapper;
             _configuration = configuration;
         }
 
@@ -49,7 +54,7 @@ namespace StyleVaulAPI.Services
             user.Password = "12345678";
 
             await _repository.CreateAsync(user);
-
+            return _mapper.Map<UsersResponse>(user);
         }
 
         public async Task<bool> DeleteAsync(int id, int changeId)
@@ -74,12 +79,12 @@ namespace StyleVaulAPI.Services
 
         public async Task<List<UsersResponse>> GetAllAsync(int companyId)
         {
-            return < List < UsersResponse >> (await _repository.GetAllAsync(companyId));
+            return _mapper.Map<List<UsersResponse>>(await _repository.GetAllAsync(companyId));
         }
 
         public async Task<UsersResponse> GetByIdAsync(int id)
         {
-            return < UsersResponse > (await _repository.GetByIdAsync(id));
+            return _mapper.Map<UsersResponse>(await _repository.GetByIdAsync(id));
         }
         public async Task<bool> GetEmailAsync(string email)
         {
