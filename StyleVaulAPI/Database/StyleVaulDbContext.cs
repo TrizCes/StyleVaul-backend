@@ -61,6 +61,19 @@ namespace StyleVaulAPI.Database
                         Password = "12345678"
                     }
                  );
+
+            modelBuilder
+                .Entity<Company>()
+                .HasData(
+                    new Company
+                    {
+                        Id = 1,
+                        Cnpj = "12123123000112",
+                        Email = "stylevaul@email.com",
+                        Name = "Style Vaul Ltda",
+                        Manager = "Beatriz Ceschini",
+                        Password = "12345678"
+                    });
         }
     }
 }
