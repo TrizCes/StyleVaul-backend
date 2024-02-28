@@ -1,6 +1,8 @@
 ﻿namespace StyleVaulAPI.Models.Enums
 {
-    public class ThemeEnum
+    public enum ThemeEnum
     {
+        Light = 1,
+        Dark = 2
     }
 }

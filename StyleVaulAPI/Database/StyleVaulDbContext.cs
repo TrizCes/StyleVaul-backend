@@ -76,6 +76,18 @@ namespace StyleVaulAPI.Database
                     });
 
             modelBuilder
+               .Entity<CompanySetup>()
+               .HasData(
+                   new CompanySetup
+                   {
+                       Id = 1,
+                       Theme = ThemeEnum.Light,
+                       Logo =
+                           "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+                       CompanySetupId = 1
+                   });
+
+           modelBuilder
                 .Entity<Collection>()
                 .HasData(
                     new Collection

@@ -11,5 +11,6 @@
 
         public List<User> Users { get; set; }
         public List<Collection> Collections { get; set; }
+        public List<CompanySetup> CompaniesSetup { get; set; }
     }
 }
