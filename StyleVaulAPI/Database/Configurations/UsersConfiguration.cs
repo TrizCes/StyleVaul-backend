@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using StyleVaul.Models;
+using StyleVaulAPI.Models;
 
 namespace StyleVaul.Database.Configurations
 {

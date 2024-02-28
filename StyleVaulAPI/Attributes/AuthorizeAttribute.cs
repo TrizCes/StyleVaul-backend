@@ -1,5 +1,8 @@
 ﻿using StyleVaulAPI.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
+using StyleVaulAPI.Models.Enums;
+using Microsoft.AspNetCore.Authorization;
+using StyleVaulAPI.Dto.Users.Response;
 
 namespace StyleVaul.Attributes
 {

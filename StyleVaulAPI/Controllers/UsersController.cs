@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using StyleVaulAPI.Dto.Users.Request;
 using StyleVaulAPI.Dto.Users.Response;
 using StyleVaulAPI.Interfaces.Services;
+using StyleVaulAPI.Models;
 using System.Net;
 
 namespace StyleVaulAPI.Controllers
@@ -12,18 +14,22 @@ namespace StyleVaulAPI.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUsersService _service;
+        private readonly IMapper _mapper;
 
-        public UsersController(IUsersService service)
+        public UsersController(IUsersService service, IMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] PostUsers user)
         {
             var changer = (UsersResponse)HttpContext.Items["User"]!;
+            user.CompanyId = changer.CompanyId;
+            var result = await _service.CreateAsync(_mapper.Map<User>(user));
 
-
+            return Created("users", result);
         }
 
         [HttpPut("{id:int}")]

@@ -2,6 +2,7 @@
 using StyleVaulAPI.Interfaces.Repositories;
 using StyleVaulAPI.Models.Enums;
 using StyleVaulAPI.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace StyleVaulAPI.Database.Repositories
 {
@@ -51,12 +52,16 @@ namespace StyleVaulAPI.Database.Repositories
 
         public async Task<User?> GetByIdAsync(int Id)
         {
-            return await _dbContext.Users.Include(u => u.Company).FirstOrDefaultAsync(u => u.Id == Id);
+            throw new NotImplementedException();
+            //TODO:
+            //return await _dbContext.Users.Include(u => u.Company).FirstOrDefaultAsync(u => u.Id == Id);
         }
 
         public async Task<List<User>> GetAllAsync(int companyId)
         {
-            return await _dbContext.Users.Include(u => u.Company).Where(u => u.CompanyId == companyId).ToListAsync();
+            throw new NotImplementedException();
+            //TODO:
+            //return await _dbContext.Users.Include(u => u.Company).Where(u => u.CompanyId == companyId).ToListAsync();
         }
 
         public async Task<bool> CheckEmailAsync(int id, string email)
