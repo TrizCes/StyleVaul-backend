@@ -10,5 +10,6 @@
         public string Password { get; set; }
 
         public List<User> Users { get; set; }
+        public List<Collection> Collections { get; set; }
     }
 }

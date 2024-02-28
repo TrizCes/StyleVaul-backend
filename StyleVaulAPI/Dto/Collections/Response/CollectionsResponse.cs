@@ -1,4 +1,4 @@
-using StyleVaul.Models.Enums;
+using StyleVaulAPI.Models.Enums;
 
 namespace StyleVaulAPI.Dto.Collections.Response
 {

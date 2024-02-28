@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using StyleVaul.Models;
+using StyleVaulAPI.Models;
 
 namespace StyleVaulAPI.Database.Configurations
 {
@@ -31,8 +31,8 @@ namespace StyleVaulAPI.Database.Configurations
                 builder.Property(c => c.Status).IsRequired().HasConversion<int>();
 
                 builder
-                    .HasOne(u => u.Responsible)
-                    .WithMany(c => c.Collections)
+                    .HasOne(c => c.Responsible)
+                    .WithMany(u => u.Collections)
                     .HasForeignKey(r => r.ResponsibleId)
                     .IsRequired()
                     .OnDelete(DeleteBehavior.Restrict);

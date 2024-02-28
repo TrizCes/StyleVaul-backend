@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using StyleVaul.Attributes;
+using StyleVaulAPI.Attributes;
 using StyleVaulAPI.Dto.Users.Request;
 using StyleVaulAPI.Dto.Users.Response;
 using StyleVaulAPI.Interfaces.Services;

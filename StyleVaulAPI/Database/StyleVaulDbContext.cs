@@ -91,6 +91,43 @@ namespace StyleVaulAPI.Database
                         Budget = 20000,
                         Brand = "Triz"
                     });
+
+            modelBuilder
+                .Entity<Model>()
+                .HasData(
+                    new Model
+                    {
+                        Id = 1,
+                        Name = "Boyfriend",
+                        ResponsibleId = 1,
+                        CollectionId = 1,
+                        RealCost = 250.56,
+                        Type = ModelTypeEnum.Bermuda,
+                        Embroidery = true,
+                        Print = false
+                    },
+                    new Model
+                    {
+                        Id = 2,
+                        Name = "Envelope",
+                        ResponsibleId = 1,
+                        CollectionId = 1,
+                        RealCost = 200.45,
+                        Type = ModelTypeEnum.Saia,
+                        Embroidery = true,
+                        Print = true
+                    },
+                    new Model
+                    {
+                        Id = 3,
+                        Name = "Day Party",
+                        ResponsibleId = 1,
+                        CollectionId = 1,
+                        RealCost = 150,
+                        Type = ModelTypeEnum.Camisa,
+                        Embroidery = true,
+                        Print = false
+                    });
         }
     }
 }

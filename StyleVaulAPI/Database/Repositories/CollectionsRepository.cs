@@ -1,5 +1,6 @@
-using StyleVaul.Interfaces.Repositories;
-using StyleVaul.Models;
+using Microsoft.EntityFrameworkCore;
+using StyleVaulAPI.Interfaces.Repositories;
+using StyleVaulAPI.Models;
 
 namespace StyleVaulAPI.Database.Repositories
 {

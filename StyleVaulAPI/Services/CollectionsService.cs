@@ -192,7 +192,7 @@ namespace StyleVaulAPI.Services
                 foreach (var c in expensiveCollections)
                 {
                     var collection = _mapper.Map<CollectionsResponse>(c);
-                    var modelsQty = await _modelRepository.GetAllByCollectionsIdAsync(c.Id);
+                    var modelsQty = await _modelRepository.GetAllByCollectionIdAsync(c.Id);
                     var responsible = await _userRepository.GetByIdAsync(c.ResponsibleId);
                     var res = new CollectionsExpensiveBudgetsResponse(collection, responsible.Name, modelsQty.Count());
 
