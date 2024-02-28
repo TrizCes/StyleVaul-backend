@@ -74,6 +74,23 @@ namespace StyleVaulAPI.Database
                         Manager = "Beatriz Ceschini",
                         Password = "12345678"
                     });
+
+            modelBuilder
+                .Entity<Collection>()
+                .HasData(
+                    new Collection
+                    {
+                        Id = 1,
+                        Name = "Estação Vibrante",
+                        ResponsibleId = 1,
+                        CompanyId = 1,
+                        ReleaseYear = new DateTime(03, 04, 2025),
+                        Season = SeasonEnum.Spring,
+                        Status = StatusEnum.NotStarted,
+                        Collors = "",
+                        Budget = 20000,
+                        Brand = "Triz"
+                    });
         }
     }
 }

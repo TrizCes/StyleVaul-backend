@@ -1,6 +1,10 @@
 ﻿namespace StyleVaulAPI.Models.Enums
 {
-    public class SeasonEnum
+    public enum SeasonEnum
     {
+        Autumn = 1,
+        Winter = 2,
+        Spring = 3,
+        Summer = 4,
     }
 }
