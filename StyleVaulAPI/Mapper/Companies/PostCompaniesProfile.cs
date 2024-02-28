@@ -1,6 +1,14 @@
-﻿namespace StyleVaulAPI.Mapper.Companies
+﻿using AutoMapper;
+using StyleVaulAPI.Dto.Companies.Request;
+using StyleVaulAPI.Models;
+
+namespace StyleVaulAPI.Mapper.Companies
 {
-    public class PostCompaniesProfile 
+    public class PostCompaniesProfile : Profile
     {
+        public PostCompaniesProfile()
+        {
+            CreateMap<PostCompanies, Company>().ReverseMap();
+        }
     }
 }
