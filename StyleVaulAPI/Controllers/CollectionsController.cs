@@ -5,7 +5,6 @@ using StyleVaulAPI.Dto.Users.Response;
 using StyleVaulAPI.Interfaces.Services;
 using StyleVaulAPI.Models.Enums;
 using System.Net;
-using RouteAttribute = Microsoft.AspNetCore.Components.RouteAttribute;
 namespace StyleVaulAPI.Controllers
 {
     [Route("api/[controller]")]
