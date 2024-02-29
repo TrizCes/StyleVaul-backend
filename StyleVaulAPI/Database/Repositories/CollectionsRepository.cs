@@ -54,6 +54,15 @@ namespace StyleVaulAPI.Database.Repositories
                 .ToListAsync();
         }
 
+        public async Task<List<Collection>> GetAllValidAsync(int companyId)
+        {
+            return await _dbContext.Collections
+                .Include(c => c.Company)
+                .Include(c => c.Responsible)
+                .Where(collection => collection.CompanyId == companyId && collection.Status != Models.Enums.StatusEnum.Archived)
+                .ToListAsync();
+        }
+
         public async Task<bool> CheckNameAsync(int collectionId, string collectionName, int companyId)
         {
             return await _dbContext.Collections

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using StyleVaulAPI.Dto.Models.Request;
-using StyleVaulAPI.Dto.Models.Response;
 using StyleVaulAPI.Extensions;
 using StyleVaulAPI.Models;
 
