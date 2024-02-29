@@ -52,6 +52,15 @@ namespace StyleVaulAPI.Controllers
             }
         }
 
+        [HttpGet("valid")]
+        [Authorize(RoleEnum.ReadOnly)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> ListCollectionsValid()
+        {
+            var collections = await _service.GetAllAsync(GetCompanyIdOfUser());
+            return Ok(collections);
+        }
+        
         [HttpGet("{id}")]
         [Authorize(RoleEnum.ReadOnly)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -61,7 +70,7 @@ namespace StyleVaulAPI.Controllers
             return Ok(await _service.GetByIdAsync(id, GetCompanyIdOfUser()));
         }
 
-        [HttpGet("maiores-orcamentos/limit")]
+        [HttpGet("expensivebudgets/limit")]
         [Authorize(RoleEnum.ReadOnly)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -91,7 +100,7 @@ namespace StyleVaulAPI.Controllers
             }
         }
 
-        [HttpGet("orcamento-vs-custo")]
+        [HttpGet("budgetsvscosts")]
         [Authorize(RoleEnum.ReadOnly)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

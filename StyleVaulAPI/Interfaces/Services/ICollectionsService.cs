@@ -6,6 +6,7 @@ namespace StyleVaulAPI.Interfaces.Services
     public interface ICollectionsService
     {
         Task<List<CollectionsResponse>> GetAllAsync(int companyId);
+        Task<List<CollectionsResponse>> GetAllValidAsync(int companyId);
         Task<int> CreateAsync(PostCollectionsDto dto, int companyId);
         Task<PutCollectionsDto> UpdateAsync(PutCollectionsDto dto, int companyId);
         Task<bool> DeleteAsync(int id, int companyId);

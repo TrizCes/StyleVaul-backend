@@ -60,7 +60,7 @@ namespace StyleVaulAPI.Database.Repositories
 
         public Task<bool> CheckCollectionAsync(int companyId, int collectionId)
         {
-            return _dbContext.Collections.AnyAsync(c => c.Id == collectionId && c.CompanyId == companyId);
+            return _dbContext.Collections.AnyAsync(c => c.Id == collectionId && c.CompanyId == companyId && c.Status != Models.Enums.StatusEnum.Archived);
         }
 
         public Task<bool> CheckModelCompanyAsync(int companyId, int collectionId)
